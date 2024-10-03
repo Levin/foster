@@ -18,7 +18,7 @@ defmodule FosterWeb.Components.Question0 do
   end
 
   def handle_event("submit", params, socket) do
-    answer = 
+    answer =
       case params["question_0"] do
         "1" -> "yes"
         "0" -> "no"
@@ -38,20 +38,20 @@ defmodule FosterWeb.Components.Question0 do
     ~H"""
     <div>
       <%= if @slide_0 do %>
-        <div class="mx-10">
+        <div class="mx-10  space-y-2">
           <div class="mb-4">
             <img src="/images/somekids.svg" />
           </div>
         <p class="text-2xl">
-        <span class="font-bold font-nohemi ">
-        Sabe que em Portugal há mais de 6000 crianças e jovens a viver em instituições? 
-
-        </span>
-        Descubra a importância do Acolhimento Familiar para Crianças e Jovens e como poderá ter impacto.
+          <span class="font-bold font-nohemi">
+            Sabe que em Portugal há mais de 6000 crianças e jovens a viver em instituições?
+          </span>
         </p>
-        <span class="font-bold font-nohemi ">
-        A participação é anónima. Demora apenas 5 minutos
-        </span>
+        <p class="text-light_dark_matter font-inter">
+        Descubra a importância do Acolhimento Familiar para Crianças e Jovens e como poderá ter impacto.
+        A participação é anónima. Demora apenas 5 minutos.
+        </p>
+
         <p class="text-2xl text-light_dark_matter font-inter">
         Já ouviu falar de Acolhimento Familiar?
         </p>

@@ -14,7 +14,7 @@ defmodule FosterWeb.Components.Question5 do
   end
 
   def update(params, socket) do
-    {:ok, 
+    {:ok,
       socket
       |> assign(:answers, params.answers)
     }
@@ -23,7 +23,7 @@ defmodule FosterWeb.Components.Question5 do
   def handle_event("submit", params, socket) do
 
     # NOTE: do edit the params[....]
-    filtered_answers = 
+    filtered_answers =
       params
       |> Enum.filter(fn {_, value} -> value == "true" end)
       |> Enum.map(fn {key, _} -> key end)
@@ -39,7 +39,7 @@ defmodule FosterWeb.Components.Question5 do
       |> assign(:path, params["question_5"])
       |> assign(:answers, updated_answers)
       |> assign(:slide_5, false)
-      |> assign(:slide_6, true)
+      |> push_navigate(to: "/donativos")
     }
   end
 
@@ -104,12 +104,8 @@ defmodule FosterWeb.Components.Question5 do
       </.simple_form>
 
     </div>
-    <% end %>
-      <%= if @slide_6 do %>
-        <.live_component module={FosterWeb.Components.Endpage} id="endpage" branch={@path} answers={@answers}/>
       <% end %>
     </div>
     """
   end
-
 end
